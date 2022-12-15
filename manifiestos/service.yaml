@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mi-servicio
+  
+spec:
+  
+  selector:
+    app: postgres-container
+    tier: backend
+  ports:
+    - protocol: TCP
+      port: 5433 #por cual se accede al servicio
+      targetPort: 5432 #a cual puerto enviarlo

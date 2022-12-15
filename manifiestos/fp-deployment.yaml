@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi
+  labels:
+    
+    name: fastapi
+    
+spec:
+  selector:
+    matchLabels:
+      name: fastapi
+  template:
+    metadata:
+      labels:
+        name: fastapi
+    spec:
+      containers:
+        - name: tarea
+          
+          image: fa-pg:2.2
+          imagePullPolicy: Never
+          env:
+
+          - name: URL
+            valueFrom:
+              configMapKeyRef:
+                name: configmap-fa-pg
+                key: conexion
+          ports:
+            - containerPort: 80

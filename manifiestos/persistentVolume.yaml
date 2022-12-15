@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: postgres-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi #memoria asignada
+  accessModes:
+    - ReadWriteOnce #como utilizar el volumen 
+  hostPath: #elos archivos deben estar localmente/ no apto para produccion
+    path: /data/postgres-pv

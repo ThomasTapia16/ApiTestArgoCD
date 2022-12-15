@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-fa-pg
+  
+data:
+  conexion: postgresql://thomas:1234@mi-servicio:5433/fp-pgDB
+  dbname: fp-pgDB
